@@ -1,0 +1,238 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    
+<div class="navBar">
+    <li class="nav-li">
+        <button class="nav-button">Main page</button>
+    </li>
+    <li class="nav-li">
+        <button class="nav-button">About us</button>
+    </li>
+</div>
+
+<div id="main-title-div">
+    <h2 id="title-1">[ Making your life easier ]</h2>
+    <h1 id="title-2">Discovering the world</h1>
+</div>
+
+<div class="filterList">
+    <li class="filter-li">
+        <button class="filter-button active" id="start-button"  type="button">
+            All
+        </button>
+    </li>
+    <li class="filter-li">
+        <button class="filter-button" type="button">
+            Travel
+        </button>
+    </li>
+    <li class="filter-li">
+        <button class="filter-button" type="button">
+            Lifestyle
+        </button>
+    </li>
+    <li class="filter-li">
+        <button class="filter-button" type="button">
+            Business
+        </button>
+    </li>
+    <li class="filter-li">
+        <button class="filter-button" type="button">
+            Food
+        </button>
+    </li>
+    <li class="filter-li">
+        <button class="filter-button" id="final-button" type="button">
+            Work
+        </button>
+    </li>
+</div>
+
+<br>
+<button onclick="changeNewForm()" class="new-button">
+    +
+</button>
+
+<div class="postcard-container">
+    <div class="postcard-class" id="postcard_1">
+        <div class="postcard-content">
+            <h4 class="title">The waves are high & beautiful</h4>
+            <p class="commenter">Daniel</p>
+            <p class="description">Travel postcard</p>
+            <h6 class="type">TRAVEL</h6>
+        </div>
+
+        <div class="postcard-button-group">
+            <button onclick="changeEditForm()" class="postcard-button"> edit </button>
+            <button onclick="changeDeleteForm()" class="postcard-button"> delete</button>    
+        </div>
+
+
+    </div>
+
+    <div class="postcard-class" id="postcard_2">
+        <div class="postcard-content">
+            <h4 class="title">At the beach in winter        </h4>
+            <p class="commenter">Daniel</p>
+            <p class="description">Some places in the world still have hot climates</p>
+            <h6 class="type">LIFESTYLE</h6>
+        </div>
+
+        <div class="postcard-button-group">
+            <button onclick="changeEditForm()" class="postcard-button"> edit </button>
+            <button onclick="changeDeleteForm()" class="postcard-button"> delete</button>    
+        </div>
+    </div>
+
+    <div class="postcard-class" id="postcard_3">
+        <div class="postcard-content">
+            <h4 class="title">5 tips to work better</h4>
+            <p class="commenter">Daniel</p>
+            <p class="description">Our experts recommend a good sleep schedule and some other tips</p>
+            <h6 class="type">BUSINESS</h6>
+        </div>
+
+        <div class="postcard-button-group">
+            <button onclick="changeEditForm()" class="postcard-button"> edit </button>
+            <button onclick="changeDeleteForm()" class="postcard-button"> delete</button>    
+        </div>
+
+
+    </div>
+
+    <div class="postcard-class" id="postcard_4">
+        <div class="postcard-content">
+            <h4 class="title">Chocolate cookie recipe</h4>
+            <p class="commenter">Daniel</p>
+            <p class="description">Chocolate cookies for the coming holidays</p>
+            <h6 class="type">FOOD</h6>
+        </div>
+
+        <div class="postcard-button-group">
+            <button onclick="changeEditForm()" class="postcard-button"> edit </button>
+            <button onclick="changeDeleteForm()" class="postcard-button"> delete</button>    
+        </div>
+    </div>
+
+    <div class="postcard-class" id="postcard_5">
+        <div class="postcard-content">
+            <h4 class="title">Benefits of ergonomic chairs        </h4>
+            <p class="commenter">Daniel</p>
+            <p class="description">What a good posture can do for you</p>
+            <h6 class="type">WORK</h6>
+        </div>
+
+        <div class="postcard-button-group">
+            <button onclick="changeEditForm()" class="postcard-button"> edit </button>
+            <button onclick="changeDeleteForm()" class="postcard-button"> delete</button>    
+        </div>
+    </div>
+</div>
+
+<div id="modal-overlay" class="modal-overlay"> 
+
+    <div id="new-form" class="form-new-container">
+    
+        <div class="title-div">
+            <h2>Create postcard</h2>
+            <button onclick="changeNewForm()" class="exit-button">x</button>
+        </div>
+
+        <form>
+        <div class="form-group">
+            <label for="title">
+                Title
+            </label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="commenter">
+                Commenter
+            </label>
+            <input type="text" class="form-control" id="commenter" name="commenter"  required>
+        </div>
+    
+        <div class="form-group">
+            <label for="description">
+                 Description
+            </label>
+            <textarea name="description" id="description"  required></textarea>
+        </div>
+        
+        <div>
+            <label for="type">Type</label>
+            <select class="form-control" id="type" name="type"  required>
+                <option>TRAVEL</option>
+                <option>LIFESTYLE</option>
+                <option>BUSINESS</option>
+                <option>FOOD</option>
+                <option>WORK</option>
+
+            </select>
+        </div>
+    
+        <button onclick="changeNewForm()" class="form-button" type="submit" >Send</button>
+    </form>
+    </div>
+    
+    <div id="edit-form" class="form-new-container">
+    
+        <div class="title-div">
+            <h2>Edit postcard</h2>
+            <button onclick="changeEditForm()" class="exit-button">x</button>
+        </div>
+        <form >
+    
+        <div class="form-group">
+            <label for="title">
+                Title
+            </label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="commenter">
+                Commenter
+            </label>
+            <input type="text" class="form-control" id="commenter" name="commenter" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="description">
+                 Description
+            </label>
+            <textarea name="description" id="description" required></textarea>
+        </div>
+        
+        <div>
+            <label for="type">Type</label>
+            <select class="form-control" id="type" name="type" required>
+                <option>TRAVEL</option>
+                <option>LIFESTYLE</option>
+                <option>BUSINESS</option>
+                <option>FOOD</option>
+                <option>WORK</option>
+            </select>
+        </div>
+    
+        <button onclick="changeEditForm()" class="form-button" type="submit">Send</button>
+        </form>
+    </div>
+    
+    <div id="delete-form" class="form-delete-container">
+    
+        <h2 id="delete-title">Are you sure you want to delete this postcard?</h2>
+    
+        <div class="delete-button-span">
+            <button onclick="changeDeleteForm()" class="delete-button">Delete</button>
+            <button onclick="changeDeleteForm()" class="delete-button">Close</button>
+        </div>
+    
+    </div>
+</div>
+</body>
